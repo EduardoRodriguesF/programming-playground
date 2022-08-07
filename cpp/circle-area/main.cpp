@@ -4,8 +4,7 @@ using namespace std;
 
 int main() {
   const double PI = atan(1) * 4;
-  double area;
-  double radius;
+  double area, radius;
 
   cout << "Please enter the radius of the circle:" << endl; 
   cin >> radius;
