@@ -2,8 +2,9 @@
 #include <cmath>
 using namespace std;
 
+const double PI = atan(1) * 4;
+
 int main() {
-  const double PI = atan(1) * 4;
   double area, radius;
 
   cout << "Please enter the radius of the circle:" << endl; 
