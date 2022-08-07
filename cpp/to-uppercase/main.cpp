@@ -2,7 +2,7 @@
 using namespace std;
 
 // ASCII of 'a' minus ASCII of 'A'
-const int CAPITALIZATION_ASCII_OFFSET = 97 - 65;
+const int CAPITALIZATION_ASCII_OFFSET = 'a' - 'A';
 
 char to_uppercase(char input) {
   return input - CAPITALIZATION_ASCII_OFFSET;
