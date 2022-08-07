@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
 
+const int WEEK_DAYS = 7;
+
 int main() {
-  const int WEEK_DAYS = 7;
   int traveled_days;
 
   cout << "Please enter the number of days you traveled:" << endl;
