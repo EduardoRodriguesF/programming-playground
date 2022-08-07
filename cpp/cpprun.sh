@@ -1,9 +1,7 @@
 #!/bin/bash
 
 path=$1
-program_path="$path/main.cpp"
-program_path="$path/a.out"
 
-g++ $program_path
+g++ $path/main.cpp -o $path/a.out
 
-$out_path
+$path/a.out
