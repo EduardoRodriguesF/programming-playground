@@ -3,13 +3,11 @@
 using namespace std;
 
 void printAsc(int start, int end) {
-  if (start == end) {
-    cout << start << endl;
-    return;
-  }
+  cout << start << endl;
 
-  printAsc(start, end-1);
-  cout << end << endl;
+  if (start != end) {
+    printAsc(start+1, end);
+  }
 }
 
 int main() {
