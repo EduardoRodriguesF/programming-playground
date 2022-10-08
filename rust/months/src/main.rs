@@ -1,16 +1,18 @@
 use std::io::stdin;
 
-const MONTHS: &[&str] = &[
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+const MONTHS: &[(&str, usize)] = &[
+    ("January", 31),
+    ("February", 28),
+    ("March", 31),
+    ("April", 30),
+    ("May", 31),
+    ("June", 30),
+    ("July", 31),
+    ("August", 31),
+    ("September", 30),
+    ("October", 31),
+    ("November", 30),
+    ("December", 31),
 ];
 
 fn main() {
@@ -29,7 +31,7 @@ fn main() {
         return;
     }
 
-    let month = MONTHS[index];
+    let (month, days) = MONTHS[index];
 
-    println!("You accessed {month}!");
+    println!("You accessed {month}, which has {days} days!");
 }
