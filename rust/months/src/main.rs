@@ -33,5 +33,12 @@ fn main() {
 
     let (month, days) = MONTHS[index];
 
-    println!("You accessed {month}, which has {days} days!");
+    println!("You accessed {month}, which has {days} days!\n");
+
+    println!("Other months:");
+    for item in MONTHS {
+        let (month, days) = item;
+
+        println!("{month}, {days}");
+    }
 }
