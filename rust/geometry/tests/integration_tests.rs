@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use geometry::*;
+    use geometry::{triangles::*, rectangles::*};
 
     #[test]
     fn rectangle_calculates_area() {
@@ -38,20 +38,20 @@ mod tests {
     fn triangle_evaluates_equilateral_kind() {
         let triangle = Triangle::new((10, 10, 10));
 
-        assert!(matches!(triangle.kind(), geometry::TriangleType::Equilateral));
+        assert!(matches!(triangle.kind(), TriangleType::Equilateral));
     }
 
     #[test]
     fn triangle_evaluates_isosceles_kind() {
         let triangle = Triangle::new((10, 10, 9));
 
-        assert!(matches!(triangle.kind(), geometry::TriangleType::Isosceles));
+        assert!(matches!(triangle.kind(), TriangleType::Isosceles));
     }
 
     #[test]
     fn triangle_evaluates_scalene_kind() {
         let triangle = Triangle::new((10, 5, 9));
 
-        assert!(matches!(triangle.kind(), geometry::TriangleType::Scalene));
+        assert!(matches!(triangle.kind(), TriangleType::Scalene));
     }
 }
