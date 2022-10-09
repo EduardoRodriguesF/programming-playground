@@ -16,7 +16,7 @@ impl Rectangle {
         self.width > 0 && self.height > 0
     }
 
-    pub fn can_hold(&self, rect: &Self) -> bool {
-        self.width >= rect.width && self.height >= rect.height
+    pub fn can_hold(&self, other: &Self) -> bool {
+        self.width >= other.width && self.height >= other.height
     }
 }
