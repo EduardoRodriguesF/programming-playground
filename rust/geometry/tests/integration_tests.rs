@@ -23,7 +23,7 @@ mod tests {
         let rect = Rectangle::new(10, 8);
         let other_rect = Rectangle::new(7, 8);
 
-        assert!(rect.can_hold(other_rect));
+        assert!(rect.can_hold(&other_rect));
     }
 
     #[test]
@@ -31,6 +31,6 @@ mod tests {
         let rect = Rectangle::new(10, 8);
         let other_rect = Rectangle::new(7, 10);
 
-        assert!(!rect.can_hold(other_rect));
+        assert!(!rect.can_hold(&other_rect));
     }
 }
