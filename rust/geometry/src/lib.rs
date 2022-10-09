@@ -4,9 +4,7 @@ pub struct Rectangle {
 }
 
 pub struct Triangle {
-    pub x: u32,
-    pub y: u32,
-    pub z: u32,
+    pub sizes: (u32, u32, u32),
 }
 
 pub enum TriangleType {
@@ -35,20 +33,26 @@ impl Rectangle {
 }
 
 impl Triangle {
-    pub fn new(x: u32, y: u32, z: u32) -> Self {
-        Self { x, y, z }
+    pub fn new(sizes: (u32, u32, u32)) -> Self {
+        Self { sizes }
     }
 
     pub fn is_isosceles(&self) -> bool {
-        self.x == self.y || self.x == self.z || self.y == self.z
+        let sizes = self.sizes;
+
+        sizes.0 == sizes.1 || sizes.0 == sizes.2 || sizes.1 == sizes.0
     }
 
     pub fn is_equilateral(&self) -> bool {
-        self.x == self.y && self.y == self.z
+        let sizes = self.sizes;
+
+        sizes.0 == sizes.1 && sizes.1 == sizes.2
     }
 
     pub fn is_scalene(&self) -> bool {
-        self.x != self.y && self.x != self.z && self.y != self.z
+        let sizes = self.sizes;
+
+        sizes.0 != sizes.1 && sizes.0 != sizes.2 && sizes.1 != sizes.2
     }
 
     pub fn kind(&self) -> TriangleType {

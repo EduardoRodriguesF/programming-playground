@@ -36,21 +36,21 @@ mod tests {
 
     #[test]
     fn triangle_evaluates_equilateral_kind() {
-        let triangle = Triangle::new(10, 10, 10);
+        let triangle = Triangle::new((10, 10, 10));
 
         assert!(matches!(triangle.kind(), geometry::TriangleType::Equilateral));
     }
 
     #[test]
     fn triangle_evaluates_isosceles_kind() {
-        let triangle = Triangle::new(10, 10, 9);
+        let triangle = Triangle::new((10, 10, 9));
 
         assert!(matches!(triangle.kind(), geometry::TriangleType::Isosceles));
     }
 
     #[test]
     fn triangle_evaluates_scalene_kind() {
-        let triangle = Triangle::new(10, 5, 9);
+        let triangle = Triangle::new((10, 5, 9));
 
         assert!(matches!(triangle.kind(), geometry::TriangleType::Scalene));
     }
