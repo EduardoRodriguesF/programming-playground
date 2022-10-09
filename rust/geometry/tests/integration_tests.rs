@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use geometry::{Rectangle,Triangle};
+    use geometry::*;
 
     #[test]
     fn rectangle_calculates_area() {
