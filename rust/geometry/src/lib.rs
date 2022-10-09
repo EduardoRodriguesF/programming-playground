@@ -13,6 +13,7 @@ pub enum TriangleType {
     Isosceles,
     Equilateral,
     Scalene,
+    Invalid,
 }
 
 impl Rectangle {
@@ -38,15 +39,31 @@ impl Triangle {
         Self { x, y, z }
     }
 
+    pub fn is_isosceles(&self) -> bool {
+        self.x == self.y || self.x == self.z || self.y == self.z
+    }
+
+    pub fn is_equilateral(&self) -> bool {
+        self.x == self.y && self.y == self.z
+    }
+
+    pub fn is_scalene(&self) -> bool {
+        self.x != self.y && self.x != self.z && self.y != self.z
+    }
+
     pub fn kind(&self) -> TriangleType {
-        if self.x == self.y && self.y == self.z { 
+        if self.is_equilateral() { 
             return TriangleType::Equilateral;
         }
 
-        if self.x == self.y || self.x == self.z || self.y == self.z {
+        if self.is_isosceles() {
             return TriangleType::Isosceles;
         }
 
-        TriangleType::Scalene
+        if self.is_scalene() {
+            return TriangleType::Scalene;
+        }
+
+        TriangleType::Invalid
     }
 }
