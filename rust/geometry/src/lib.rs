@@ -15,4 +15,8 @@ impl Rectangle {
     pub fn is_valid(&self) -> bool {
         self.width > 0 && self.height > 0
     }
+
+    pub fn can_hold(&self, rect: Self) -> bool {
+        self.width >= rect.width && self.height >= rect.height
+    }
 }
