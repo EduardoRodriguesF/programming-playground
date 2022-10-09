@@ -20,6 +20,18 @@ fn main() {
         println!("User {} has {}", user.name, user.age);
     }
 
-    println!("Most recent user: {}", &users.last().unwrap().name);
-    println!("First user: {}", &users.first().unwrap().name);
+    loop {
+        println!("Enter an index to access user infos");
+
+        let mut index = String::new();
+
+        std::io::stdin().read_line(&mut index).expect("Failed to read line!");
+
+        let index: usize = index.trim().parse().expect("Not a number!");
+
+        match users.get(index) {
+            Some(user) => println!("You accessed {}, a {} years old user!", user.name, user.age),
+            None => println!("Not a valid index!"),
+        }
+    }
 }
