@@ -16,8 +16,12 @@ fn main() {
     users.push(User::new(String::from("user B"), 17));
     users.push(User::new(String::from("user C"), 92));
 
-    for user in &users {
-        println!("User {} has {}", user.name, user.age);
+    for user in &mut users {
+        println!("User {} has {}... aging one year now!", user.name, user.age);
+        
+        // usually would need to dereference it, but apparantly not...
+        // *user.age += 5; results in error
+        user.age += 1;
     }
 
     loop {
