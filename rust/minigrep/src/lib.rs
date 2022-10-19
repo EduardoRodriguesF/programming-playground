@@ -44,13 +44,17 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
 mod tests {
     use super::*;
 
+    fn get_contents<'a>() -> &'a str {
+"\
+Rust:
+safe, fast, productive.
+Pick three."
+    }
+
     #[test]
     fn one_result() {
         let query = "duct";
-        let contents = "\
-Rust:
-safe, fast, productive.
-Pick three.";
+        let contents = get_contents();
 
         assert_eq!(vec!["safe, fast, productive."], search(query, contents));
     }
