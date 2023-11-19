@@ -4,6 +4,8 @@
 #define LOWER_LIMIT 0
 #define STEP 20
 
+float to_celsius(float fahr);
+
 int main() {
     float fahr, celsius;
 
@@ -12,8 +14,12 @@ int main() {
 
     fahr = LOWER_LIMIT;
     while (fahr <= UPPER_LIMIT) {
-        celsius = 5 * (fahr - 32) / 9;
+        celsius = to_celsius(fahr);
         printf("%3.0f\t%6.1f\n", fahr, celsius);
         fahr += STEP;
     }
+}
+
+float to_celsius(float fahr) {
+    return 5.0f * (fahr - 32.0f) / 9.0f;
 }
