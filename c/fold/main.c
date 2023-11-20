@@ -1,3 +1,4 @@
+#include <ctype.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,10 +24,6 @@ int main(int argc, char** argv) {
     }
 
     return 0;
-}
-
-int is_white_space(const char c) {
-    return c == ' ' || c == '\t' || c == '\n';
 }
 
 size_t m_getline(char line[], size_t maxline) {
@@ -60,7 +57,7 @@ void fold_print(char *string, size_t length, size_t columns) {
             used_columns = strlen(word);
         }
 
-        if (is_white_space(ch)) {
+        if (isblank(ch)) {
             printf("%s", word);
             line_words++;
             memset(word, 0, sizeof(word));
