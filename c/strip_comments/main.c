@@ -50,6 +50,13 @@ int main() {
                     char fill = '\0';
                     if (total_nonblanks > 0) fill = '\n';
 
+                    // get rid of trailling spaces
+                    for (size_t j = rlength - 2; j > 0; j--) {
+                        if (!isblank(result[j])) break;
+                        result[j] = fill;
+                        result[j + 1] = '\0';
+                    }
+
                     result[rlength - 1] = fill;
                     break; // There is no more content to look for. Time to return line.
                 } else if (ch == '*') {
