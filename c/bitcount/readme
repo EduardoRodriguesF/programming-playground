@@ -1,0 +1,19 @@
+bits are always flip from right to left.
+
+0010011 - 1
+=
+0010010
+
+
+0010010 - 1
+=
+0010001
+
+
+Because the rightmost bit is the smallest, subtracting any number by 1 will always flip the rightmost (smallest) bit. When we use the AND bitwise operator, 
+the new value and the previous one won't match.
+
+0010010 & 0010001
+
+Therefore: 0010000
+It is removed.
